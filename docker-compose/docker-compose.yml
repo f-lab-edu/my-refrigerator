@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mysql:
+    container_name: refrigerator
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: refrigerator
+      MYSQL_ROOT_PASSWORD: flab-pass
+      MYSQL_ROOT_HOST: '%'
+    ports:
+      - "13306:3306"
+    restart: always
+
