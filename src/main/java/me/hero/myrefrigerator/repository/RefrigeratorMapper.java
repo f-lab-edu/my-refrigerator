@@ -11,5 +11,7 @@ public interface RefrigeratorMapper {
 
     Optional<Refrigerator> findById(Long id);
 
+    Optional<Refrigerator> findByName(String name);
+
     void deleteAll();
 }

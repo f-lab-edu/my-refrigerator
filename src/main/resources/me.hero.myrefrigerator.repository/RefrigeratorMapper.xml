@@ -13,6 +13,12 @@
         where id = #{id};
     </select>
 
+    <select id="findByName" resultType="Refrigerator">
+        select *
+        from refrigerator
+        where name = #{name};
+    </select>
+
     <delete id="deleteAll">
         delete from refrigerator
     </delete>
