@@ -26,5 +26,23 @@
     <delete id="deleteAll">
         delete from refrigerator
     </delete>
+
+    <insert id="saveItem" useGeneratedKeys="true" keyProperty="id">
+        insert into item(name, storage_start_date, storage_end_date, volume, refrigerator_id)
+        values (#{name}, #{storageStartDate}, #{storageEndDate}, #{volume}, #{refrigeratorId});
+    </insert>
+
+    <select id="findItemAll" resultType="Item">
+        select *
+        from item
+    </select>
+
+    <select id="findItemByName" resultType="Item">
+        select *
+        from item
+        where name = #{name}
+    </select>
+
+
 </mapper>
 

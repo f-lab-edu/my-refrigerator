@@ -1,5 +1,6 @@
 package me.hero.myrefrigerator.repository.mybatis;
 
+import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,4 +18,10 @@ public interface RefrigeratorMapper {
     void deleteAll();
 
     List<Refrigerator> findAll();
+
+    void saveItem(Item item);
+
+    List<Item> findItemAll();
+
+    Optional<Item> findItemByName(String name);
 }
