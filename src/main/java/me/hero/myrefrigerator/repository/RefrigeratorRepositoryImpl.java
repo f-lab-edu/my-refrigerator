@@ -1,6 +1,7 @@
 package me.hero.myrefrigerator.repository;
 
 import lombok.RequiredArgsConstructor;
+import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
 import me.hero.myrefrigerator.repository.mybatis.RefrigeratorMapper;
 import org.springframework.stereotype.Repository;
@@ -20,7 +21,7 @@ public class RefrigeratorRepositoryImpl implements RefrigeratorRepository {
 
     @Override
     public Optional<Refrigerator> findById(Long id) {
-        return null;
+        return refrigeratorMapper.findById(id);
     }
 
     @Override
@@ -35,6 +36,21 @@ public class RefrigeratorRepositoryImpl implements RefrigeratorRepository {
 
     @Override
     public void deleteAll() {
+        refrigeratorMapper.deleteAll();
+    }
 
+    @Override
+    public void saveItem(Item item) {
+
+    }
+
+    @Override
+    public List<Item> findItemAll() {
+        return null;
+    }
+
+    @Override
+    public Optional<Item> findItemByName(String name) {
+        return Optional.empty();
     }
 }

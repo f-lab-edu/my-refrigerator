@@ -1,5 +1,6 @@
 package me.hero.myrefrigerator.repository;
 
+import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
 
 import java.util.List;
@@ -11,4 +12,8 @@ public interface RefrigeratorRepository {
     Optional<Refrigerator> findByName(String name);
     List<Refrigerator> findAll();
     void deleteAll();
+
+    void saveItem(Item item);
+    List<Item> findItemAll();
+    Optional<Item> findItemByName(String name);
 }
