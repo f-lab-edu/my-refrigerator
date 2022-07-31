@@ -41,16 +41,16 @@ public class RefrigeratorRepositoryImpl implements RefrigeratorRepository {
 
     @Override
     public void saveItem(Item item) {
-
+        refrigeratorMapper.saveItem(item);
     }
 
     @Override
     public List<Item> findItemAll() {
-        return null;
+        return refrigeratorMapper.findItemAll();
     }
 
     @Override
     public Optional<Item> findItemByName(String name) {
-        return Optional.empty();
+        return refrigeratorMapper.findItemByName(name);
     }
 }
