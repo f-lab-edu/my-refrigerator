@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import me.hero.myrefrigerator.controller.dto.CommonResponse;
 import me.hero.myrefrigerator.controller.dto.RefrigeratorDto;
 import me.hero.myrefrigerator.service.RefrigeratorFacade;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
