@@ -16,4 +16,6 @@ public interface RefrigeratorRepository {
     void saveItem(Item item);
     List<Item> findItemAll();
     Optional<Item> findItemByName(String name);
+
+    Long findRemainingCapacityById(Long refrigeratorId);
 }

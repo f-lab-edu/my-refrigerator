@@ -2,7 +2,6 @@ package me.hero.myrefrigerator.repository;
 
 import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -96,8 +94,8 @@ class RefrigeratorRepositoryTest {
     void saveItem_case01() {
         refrigeratorRepository.save(refrigeratorA);
         Refrigerator findRefrigeratorA = refrigeratorRepository.findByName(refrigeratorA.getName()).get();
-        itemA.setRefrigeratorId(findRefrigeratorA.getId());
-        itemB.setRefrigeratorId(findRefrigeratorA.getId());
+        itemA.addRefrigerator(findRefrigeratorA.getId());
+        itemB.addRefrigerator(findRefrigeratorA.getId());
         refrigeratorRepository.saveItem(itemA);
         refrigeratorRepository.saveItem(itemB);
 
@@ -126,8 +124,8 @@ class RefrigeratorRepositoryTest {
     void saveItem_case02() {
         refrigeratorRepository.save(refrigeratorA);
         Refrigerator findRefrigeratorA = refrigeratorRepository.findByName(refrigeratorA.getName()).get();
-        itemA.setRefrigeratorId(findRefrigeratorA.getId());
-        itemB.setRefrigeratorId(findRefrigeratorA.getId());
+        itemA.addRefrigerator(findRefrigeratorA.getId());
+        itemB.addRefrigerator(findRefrigeratorA.getId());
         refrigeratorRepository.saveItem(itemA);
         refrigeratorRepository.saveItem(itemB);
 

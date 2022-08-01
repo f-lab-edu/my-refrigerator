@@ -17,4 +17,10 @@ public class Refrigerator {
     private LocalDateTime modifiedTime;
     private LocalDateTime deleteTime;
     private Long limitedVolume;
+
+    public void initializationTime() {
+        LocalDateTime now = LocalDateTime.now();
+        this.createdTime = now;
+        this.modifiedTime = now;
+    }
 }

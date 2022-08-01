@@ -53,4 +53,11 @@ public class RefrigeratorRepositoryImpl implements RefrigeratorRepository {
     public Optional<Item> findItemByName(String name) {
         return refrigeratorMapper.findItemByName(name);
     }
+
+    @Override
+    public Long findRemainingCapacityById(Long refrigeratorId) {
+        Long limitedVolume = refrigeratorMapper.findLimitedVolumeById(refrigeratorId);
+        Long totalVolume = refrigeratorMapper.findTotalVolumeById(refrigeratorId).orElseGet(() -> 0L);
+        return limitedVolume - totalVolume;
+    }
 }
