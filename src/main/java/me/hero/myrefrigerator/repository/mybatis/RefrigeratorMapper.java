@@ -26,5 +26,5 @@ public interface RefrigeratorMapper {
     Optional<Item> findItemByName(String name);
 
     Long findLimitedVolumeById(Long refrigeratorId);
-    Long findTotalVolumeById(Long refrigeratorId);
+    Optional<Long> findTotalVolumeById(Long refrigeratorId);
 }

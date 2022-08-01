@@ -52,7 +52,7 @@
     <select id="findTotalVolumeById" resultType="Long">
         select sum(i.volume)
         from item i
-        where i.refrigeratorId = #{refrigeratorId}
+        where i.refrigerator_id = #{refrigeratorId}
     </select>
 
 
