@@ -14,6 +14,7 @@ public class RefrigeratorService {
     private final RefrigeratorRepository refrigeratorRepository;
 
     public void createRefrigerator(Refrigerator refrigerator) {
+        refrigerator.initializationTime();
         refrigeratorRepository.save(refrigerator);
     }
 

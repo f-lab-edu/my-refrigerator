@@ -17,4 +17,8 @@ public class Refrigerator {
     private LocalDateTime modifiedTime;
     private LocalDateTime deleteTime;
     private Long limitedVolume;
+
+    public void initializationTime() {
+
+    }
 }
