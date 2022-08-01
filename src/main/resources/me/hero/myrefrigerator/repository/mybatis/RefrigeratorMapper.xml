@@ -43,6 +43,18 @@
         where name = #{name}
     </select>
 
+    <select id="findLimitedVolumeById" resultType="Long">
+        select r.limited_volume
+        from refrigerator r
+        where r.id = #{refrigeratorId}
+    </select>
+
+    <select id="findTotalVolumeById" resultType="Long">
+        select sum(i.volume)
+        from Item i
+        where i.refrigeratorId = #{refrigeratorId}
+    </select>
+
 
 </mapper>
 
