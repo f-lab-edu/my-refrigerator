@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.hero.myrefrigerator.repository.mybatis.RefrigeratorMapper">
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into refrigerator(name, created_time, modified_time, limited_volume)
+        values (#{name}, #{createdTime}, #{modifiedTime}, #{limitedVolume});
+    </insert>
+
+    <select id="findById" resultType="Refrigerator">
+        select *
+        from refrigerator
+        where id = #{id};
+    </select>
+
+    <select id="findByName" resultType="Refrigerator">
+        select *
+        from refrigerator
+        where name = #{name};
+    </select>
+
+    <select id="findAll" resultType="Refrigerator">
+        select *
+        from refrigerator;
+    </select>
+
+    <delete id="deleteAll">
+        delete from refrigerator
+    </delete>
+
+    <insert id="saveItem" useGeneratedKeys="true" keyProperty="id">
+        insert into item(name, storage_start_date, storage_end_date, volume, refrigerator_id)
+        values (#{name}, #{storageStartDate}, #{storageEndDate}, #{volume}, #{refrigeratorId});
+    </insert>
+
+    <select id="findItemAll" resultType="Item">
+        select *
+        from item
+    </select>
+
+    <select id="findItemByName" resultType="Item">
+        select *
+        from item
+        where name = #{name}
+    </select>
+
+
+</mapper>
+
