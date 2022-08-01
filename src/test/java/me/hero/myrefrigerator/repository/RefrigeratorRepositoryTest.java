@@ -94,8 +94,8 @@ class RefrigeratorRepositoryTest {
     void saveItem_case01() {
         refrigeratorRepository.save(refrigeratorA);
         Refrigerator findRefrigeratorA = refrigeratorRepository.findByName(refrigeratorA.getName()).get();
-        itemA.setRefrigeratorId(findRefrigeratorA.getId());
-        itemB.setRefrigeratorId(findRefrigeratorA.getId());
+        itemA.addRefrigerator(findRefrigeratorA.getId());
+        itemB.addRefrigerator(findRefrigeratorA.getId());
         refrigeratorRepository.saveItem(itemA);
         refrigeratorRepository.saveItem(itemB);
 
@@ -124,8 +124,8 @@ class RefrigeratorRepositoryTest {
     void saveItem_case02() {
         refrigeratorRepository.save(refrigeratorA);
         Refrigerator findRefrigeratorA = refrigeratorRepository.findByName(refrigeratorA.getName()).get();
-        itemA.setRefrigeratorId(findRefrigeratorA.getId());
-        itemB.setRefrigeratorId(findRefrigeratorA.getId());
+        itemA.addRefrigerator(findRefrigeratorA.getId());
+        itemB.addRefrigerator(findRefrigeratorA.getId());
         refrigeratorRepository.saveItem(itemA);
         refrigeratorRepository.saveItem(itemB);
 
