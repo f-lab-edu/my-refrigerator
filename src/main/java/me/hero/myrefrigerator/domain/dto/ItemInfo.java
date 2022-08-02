@@ -5,9 +5,9 @@ import lombok.Data;
 
 @AllArgsConstructor @Data
 public class ItemInfo {
-    private Long id;
-    private String refrigeratorName;
-    private String name;
-    private Long volume;
-    private Long remainingStorageDay;
+    private final Long id;
+    private final String refrigeratorName;
+    private final String name;
+    private final Long volume;
+    private final Long remainingStorageDay;
 }

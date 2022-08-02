@@ -1,7 +1,8 @@
 package me.hero.myrefrigerator.service;
 
 import lombok.RequiredArgsConstructor;
-import me.hero.myrefrigerator.common.vo.Items;
+import me.hero.myrefrigerator.common.ItemInfos;
+import me.hero.myrefrigerator.common.Items;
 import me.hero.myrefrigerator.domain.dto.ItemInfo;
 import me.hero.myrefrigerator.repository.RefrigeratorQueryRepository;
 import me.hero.myrefrigerator.repository.RefrigeratorRepository;
@@ -26,7 +27,7 @@ public class RefrigeratorQueryService {
         return new Items(refrigeratorQueryRepository.findAllItemsByRefrigerator(refrigeratorId));
     }
 
-    public List<ItemInfo> findAllItems() {
-        return refrigeratorQueryRepository.findItemsOrderByRefrigerator();
+    public ItemInfos findAllItems() {
+        return new ItemInfos(refrigeratorQueryRepository.findItemsOrderByRefrigerator());
     }
 }
