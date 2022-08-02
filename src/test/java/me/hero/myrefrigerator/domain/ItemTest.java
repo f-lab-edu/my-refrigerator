@@ -1,5 +1,7 @@
 package me.hero.myrefrigerator.domain;
 
+import me.hero.myrefrigerator.exception.ConstraintViolationException;
+import me.hero.myrefrigerator.exception.InvalidParamException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,7 +19,7 @@ class ItemTest {
         Long remainingCapacity = 30L;
         Item item = Item.builder().volume(40L).build();
         //when then
-        assertThrows(RuntimeException.class, () -> item.validVolume(remainingCapacity));
+        assertThrows(ConstraintViolationException.class, () -> item.validVolume(remainingCapacity));
     }
 
     @Test
@@ -44,6 +46,6 @@ class ItemTest {
 
         //when then
         assertThat(item.getRefrigeratorId()).isNull();
-        assertThrows(RuntimeException.class, () -> item.addRefrigerator(null));
+        assertThrows(InvalidParamException.class, () -> item.addRefrigerator(null));
     }
 }
