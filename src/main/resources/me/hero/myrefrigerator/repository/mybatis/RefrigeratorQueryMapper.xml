@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.hero.myrefrigerator.repository.mybatis.RefrigeratorQueryMapper">
+    <select id="findItemsByRefrigeratorId" resultType="Item">
+        select *
+        from item i
+        where i.refrigerator_id = #{refrigeratorId}
+        and now() between i.storage_start_date and i.storage_end_date
+    </select>
+
+    <select id="findItemsOrderByRefrigerator" resultType="ItemResponse">
+        select i.id as id, r.name as refrigeratorName, i.name as name, i.volume as volume, DATEDIFF(i.storage_end_date, now()) as remainingStorageDay
+        from refrigerator r
+        left join item i on r.id = i.refrigerator_id
+        where now() between i.storage_start_date and i.storage_end_date
+        order by r.id asc, remainingStorageDay asc
+    </select>
+</mapper>
+
