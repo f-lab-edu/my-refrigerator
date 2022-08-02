@@ -17,6 +17,7 @@ class ItemTest {
         Long remainingCapacity = 30L;
         Item item = Item.builder().volume(40L).build();
         //when then
+        //Todo: RuntimeException 변경된 내용 적용
         assertThrows(RuntimeException.class, () -> item.validVolume(remainingCapacity));
     }
 
@@ -44,6 +45,7 @@ class ItemTest {
 
         //when then
         assertThat(item.getRefrigeratorId()).isNull();
+        //Todo: RuntimeException 변경된 내용 적용
         assertThrows(RuntimeException.class, () -> item.addRefrigerator(null));
     }
 }
