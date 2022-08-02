@@ -1,4 +1,4 @@
-package me.hero.myrefrigerator.controller.dto;
+package me.hero.myrefrigerator.common.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
