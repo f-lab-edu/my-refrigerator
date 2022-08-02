@@ -25,6 +25,9 @@
 - MyBatis 사용방법 학습
 - Join을 활용한 조회로직 작성
 
+### ERD
+
+![ERD](images/erd.png)
 
 ### 실행 방법
 1. docker-compose 폴더로 이동하여 `docker-compose up refrigerator -d`
