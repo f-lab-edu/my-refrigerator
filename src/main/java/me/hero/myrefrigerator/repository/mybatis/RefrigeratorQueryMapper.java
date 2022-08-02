@@ -1,7 +1,7 @@
 package me.hero.myrefrigerator.repository.mybatis;
 
 import me.hero.myrefrigerator.domain.Item;
-import me.hero.myrefrigerator.domain.dto.ItemResponse;
+import me.hero.myrefrigerator.domain.dto.ItemInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -10,5 +10,5 @@ import java.util.List;
 public interface RefrigeratorQueryMapper {
     List<Item> findItemsByRefrigeratorId(Long refrigeratorId);
 
-    List<ItemResponse> findItemsOrderByRefrigerator();
+    List<ItemInfo> findItemsOrderByRefrigerator();
 }

@@ -1,10 +1,9 @@
 package me.hero.myrefrigerator.service;
 
 import lombok.RequiredArgsConstructor;
-import me.hero.myrefrigerator.controller.dto.RefrigeratorDto;
+import me.hero.myrefrigerator.common.dto.RefrigeratorDto;
 import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
-import me.hero.myrefrigerator.repository.mybatis.RefrigeratorMapper;
 import org.springframework.stereotype.Component;
 
 @Component

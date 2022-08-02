@@ -2,7 +2,7 @@ package me.hero.myrefrigerator.service;
 
 import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
-import me.hero.myrefrigerator.controller.dto.RefrigeratorDto;
+import me.hero.myrefrigerator.common.dto.RefrigeratorDto;
 
 public class RefrigeratorVoMapper {
 

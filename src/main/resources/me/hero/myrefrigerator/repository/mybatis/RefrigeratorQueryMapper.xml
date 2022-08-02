@@ -8,7 +8,7 @@
         and now() between i.storage_start_date and i.storage_end_date
     </select>
 
-    <select id="findItemsOrderByRefrigerator" resultType="ItemResponse">
+    <select id="findItemsOrderByRefrigerator" resultType="ItemInfo">
         select i.id as id, r.name as refrigeratorName, i.name as name, i.volume as volume, DATEDIFF(i.storage_end_date, now()) as remainingStorageDay
         from refrigerator r
         left join item i on r.id = i.refrigerator_id

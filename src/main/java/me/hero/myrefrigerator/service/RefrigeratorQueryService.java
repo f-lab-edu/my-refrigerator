@@ -1,8 +1,8 @@
 package me.hero.myrefrigerator.service;
 
 import lombok.RequiredArgsConstructor;
-import me.hero.myrefrigerator.domain.Item;
-import me.hero.myrefrigerator.domain.dto.ItemResponse;
+import me.hero.myrefrigerator.common.vo.Items;
+import me.hero.myrefrigerator.domain.dto.ItemInfo;
 import me.hero.myrefrigerator.repository.RefrigeratorQueryRepository;
 import me.hero.myrefrigerator.repository.RefrigeratorRepository;
 import org.springframework.stereotype.Service;
@@ -22,11 +22,11 @@ public class RefrigeratorQueryService {
         return refrigeratorRepository.findRemainingCapacityById(refrigeratorId);
     }
 
-    public List<Item> findAllByRefrigerator(Long refrigeratorId) {
-        return refrigeratorQueryRepository.findAllItemsByRefrigerator(refrigeratorId);
+    public Items findAllByRefrigerator(Long refrigeratorId) {
+        return new Items(refrigeratorQueryRepository.findAllItemsByRefrigerator(refrigeratorId));
     }
 
-    public List<ItemResponse> findAllItems() {
+    public List<ItemInfo> findAllItems() {
         return refrigeratorQueryRepository.findItemsOrderByRefrigerator();
     }
 }
