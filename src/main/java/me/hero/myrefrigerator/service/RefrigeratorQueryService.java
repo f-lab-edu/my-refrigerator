@@ -3,13 +3,10 @@ package me.hero.myrefrigerator.service;
 import lombok.RequiredArgsConstructor;
 import me.hero.myrefrigerator.common.ItemInfos;
 import me.hero.myrefrigerator.common.Items;
-import me.hero.myrefrigerator.domain.dto.ItemInfo;
 import me.hero.myrefrigerator.repository.RefrigeratorQueryRepository;
 import me.hero.myrefrigerator.repository.RefrigeratorRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
@@ -27,7 +24,7 @@ public class RefrigeratorQueryService {
         return new Items(refrigeratorQueryRepository.findAllItemsByRefrigerator(refrigeratorId));
     }
 
-    public ItemInfos findAllItems() {
+    public ItemInfos findAllItemInfos() {
         return new ItemInfos(refrigeratorQueryRepository.findItemsOrderByRefrigerator());
     }
 }

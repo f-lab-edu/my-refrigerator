@@ -1,6 +1,8 @@
 package me.hero.myrefrigerator.service;
 
 import lombok.RequiredArgsConstructor;
+import me.hero.myrefrigerator.common.ItemInfos;
+import me.hero.myrefrigerator.common.Items;
 import me.hero.myrefrigerator.common.dto.RefrigeratorDto;
 import me.hero.myrefrigerator.domain.Item;
 import me.hero.myrefrigerator.domain.Refrigerator;
@@ -23,6 +25,14 @@ public class RefrigeratorFacade {
         item.validVolume(remainingCapacity);
         item.addRefrigerator(refrigeratorId);
         refrigeratorService.createItem(item);
+    }
+
+    public Items getItems(Long refrigeratorId) {
+        return refrigeratorQueryService.findAllByRefrigerator(refrigeratorId);
+    }
+
+    public ItemInfos getItemInfos() {
+        return refrigeratorQueryService.findAllItemInfos();
     }
 
 }
