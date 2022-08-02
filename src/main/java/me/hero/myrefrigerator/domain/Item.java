@@ -1,6 +1,7 @@
 package me.hero.myrefrigerator.domain;
 
 import lombok.*;
+import me.hero.myrefrigerator.exception.InvalidParamException;
 
 import java.time.LocalDateTime;
 
@@ -19,8 +20,7 @@ public class Item {
     }
 
     public void addRefrigerator(Long refrigeratorId) {
-        //Todo: RuntimeException 이유를 상세히 알 수 있도록 변경
-        if (refrigeratorId == null) throw new RuntimeException();
+        if (refrigeratorId == null) throw new InvalidParamException("필수 데이터 누락");
         this.refrigeratorId = refrigeratorId;
     }
 }

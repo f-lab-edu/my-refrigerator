@@ -1,5 +1,6 @@
 package me.hero.myrefrigerator.domain;
 
+import me.hero.myrefrigerator.exception.InvalidParamException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,7 +46,6 @@ class ItemTest {
 
         //when then
         assertThat(item.getRefrigeratorId()).isNull();
-        //Todo: RuntimeException 변경된 내용 적용
-        assertThrows(RuntimeException.class, () -> item.addRefrigerator(null));
+        assertThrows(InvalidParamException.class, () -> item.addRefrigerator(null));
     }
 }
