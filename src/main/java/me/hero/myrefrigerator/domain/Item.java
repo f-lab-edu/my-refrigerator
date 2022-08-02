@@ -1,6 +1,7 @@
 package me.hero.myrefrigerator.domain;
 
 import lombok.*;
+import me.hero.myrefrigerator.exception.ConstraintViolationException;
 import me.hero.myrefrigerator.exception.InvalidParamException;
 
 import java.time.LocalDateTime;
@@ -15,8 +16,7 @@ public class Item {
     private Long refrigeratorId;
 
     public void validVolume(Long remainingCapacity) {
-        //Todo: RuntimeException 이유를 상세히 알 수 있도록 변경
-        if (remainingCapacity < this.volume) throw new RuntimeException();
+        if (remainingCapacity < this.volume) throw new ConstraintViolationException("남은 공간이 부족합니다.");
     }
 
     public void addRefrigerator(Long refrigeratorId) {
