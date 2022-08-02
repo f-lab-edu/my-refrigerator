@@ -26,7 +26,7 @@ public class CommonControllerAdvice {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = ConstraintViolationException.class)
     public CommonResponse onConstraintViolationException(ConstraintViolationException e) {
         log.error("[ {} ] : {}", e.getClass(), e.getMessage());
         return CommonResponse.fail(e.getMessage(), CONSTRAINT_VIOLATION.getCode());
@@ -34,7 +34,7 @@ public class CommonControllerAdvice {
 
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = InvalidParamException.class)
     public CommonResponse onInvalidParamException(InvalidParamException e) {
         log.error("[ {} ] : {}", e.getClass(), e.getMessage());
         return CommonResponse.fail(e.getMessage(), INVALID_PARAM.getCode());
